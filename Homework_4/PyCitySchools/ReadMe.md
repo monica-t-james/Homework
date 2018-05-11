@@ -1,4 +1,10 @@
 
+# PyCity Schools Analysis
+
+* It's expected that schools with bigger budgets perform better because they can afford more resources and therefore, attract better teachers. That may be the case in some schools, but it's not guaranteed. The data shows that those schools that have a per student budget of \$614 or less performed better than those that spent between \$615 and \$675 per student. Although the average math and reading scores are not significantly better, the % of students with passing grades for math and reading is. 
+* I expected to see the average math and reading scores vary by grade, but although they vary by school, they stay pretty consistent, grade by grade. This data point is interesting, but not significant.
+* Another assumption most people make is that smaller schools perform better. This data actually backs up that assumption.  The passing rates for schools with less than 2000 students is significantly better, even though the average math and reading scores are similar. The 4 of the top 5 performing schools have fewer than 2000 students, whereas the bottom 5 performing schools have more than 2000 students. All 5 of the top 5 schools are charter and all 5 of the bottom 5 schools are district. It's hard to say with this current analysis whether charter schools perform better because they're a charter school or because they have fewer students. 
+
 
 ```python
 import pandas as pd
