@@ -394,7 +394,7 @@ display_summary_df
 
 
 ```python
-top_5_schools = school_summary_df.sort_values(["% Overall Passing Rate"], ascending=False)
+top_5_schools = display_summary_df.sort_values(["% Overall Passing Rate"], ascending=False)
 top_5_schools = top_5_schools.iloc[0:5, :]
 del top_5_schools.index.name
 top_5_schools
@@ -421,7 +421,6 @@ top_5_schools
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>School ID</th>
       <th>School Type</th>
       <th>Total Students</th>
       <th>Total School Budget</th>
@@ -436,11 +435,10 @@ top_5_schools
   <tbody>
     <tr>
       <th>Cabrera High School</th>
-      <td>6</td>
       <td>Charter</td>
       <td>1858</td>
-      <td>1081356</td>
-      <td>582.0</td>
+      <td>$1,081,356.00</td>
+      <td>$582.00</td>
       <td>83.061895</td>
       <td>83.975780</td>
       <td>94.133477</td>
@@ -449,11 +447,10 @@ top_5_schools
     </tr>
     <tr>
       <th>Thomas High School</th>
-      <td>14</td>
       <td>Charter</td>
       <td>1635</td>
-      <td>1043130</td>
-      <td>638.0</td>
+      <td>$1,043,130.00</td>
+      <td>$638.00</td>
       <td>83.418349</td>
       <td>83.848930</td>
       <td>93.272171</td>
@@ -462,11 +459,10 @@ top_5_schools
     </tr>
     <tr>
       <th>Pena High School</th>
-      <td>9</td>
       <td>Charter</td>
       <td>962</td>
-      <td>585858</td>
-      <td>609.0</td>
+      <td>$585,858.00</td>
+      <td>$609.00</td>
       <td>83.839917</td>
       <td>84.044699</td>
       <td>94.594595</td>
@@ -475,11 +471,10 @@ top_5_schools
     </tr>
     <tr>
       <th>Griffin High School</th>
-      <td>4</td>
       <td>Charter</td>
       <td>1468</td>
-      <td>917500</td>
-      <td>625.0</td>
+      <td>$917,500.00</td>
+      <td>$625.00</td>
       <td>83.351499</td>
       <td>83.816757</td>
       <td>93.392371</td>
@@ -488,11 +483,10 @@ top_5_schools
     </tr>
     <tr>
       <th>Wilson High School</th>
-      <td>5</td>
       <td>Charter</td>
       <td>2283</td>
-      <td>1319574</td>
-      <td>578.0</td>
+      <td>$1,319,574.00</td>
+      <td>$578.00</td>
       <td>83.274201</td>
       <td>83.989488</td>
       <td>93.867718</td>
@@ -509,7 +503,7 @@ top_5_schools
 
 
 ```python
-bottom_5_schools = school_summary_df.sort_values(["% Overall Passing Rate"])
+bottom_5_schools = display_summary_df.sort_values(["% Overall Passing Rate"])
 bottom_5_schools = bottom_5_schools.iloc[0:5, :]
 del bottom_5_schools.index.name
 bottom_5_schools
@@ -536,7 +530,6 @@ bottom_5_schools
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>School ID</th>
       <th>School Type</th>
       <th>Total Students</th>
       <th>Total School Budget</th>
@@ -551,11 +544,10 @@ bottom_5_schools
   <tbody>
     <tr>
       <th>Rodriguez High School</th>
-      <td>11</td>
       <td>District</td>
       <td>3999</td>
-      <td>2547363</td>
-      <td>637.0</td>
+      <td>$2,547,363.00</td>
+      <td>$637.00</td>
       <td>76.842711</td>
       <td>80.744686</td>
       <td>66.366592</td>
@@ -564,11 +556,10 @@ bottom_5_schools
     </tr>
     <tr>
       <th>Figueroa High School</th>
-      <td>1</td>
       <td>District</td>
       <td>2949</td>
-      <td>1884411</td>
-      <td>639.0</td>
+      <td>$1,884,411.00</td>
+      <td>$639.00</td>
       <td>76.711767</td>
       <td>81.158020</td>
       <td>65.988471</td>
@@ -577,11 +568,10 @@ bottom_5_schools
     </tr>
     <tr>
       <th>Huang High School</th>
-      <td>0</td>
       <td>District</td>
       <td>2917</td>
-      <td>1910635</td>
-      <td>655.0</td>
+      <td>$1,910,635.00</td>
+      <td>$655.00</td>
       <td>76.629414</td>
       <td>81.182722</td>
       <td>65.683922</td>
@@ -590,11 +580,10 @@ bottom_5_schools
     </tr>
     <tr>
       <th>Johnson High School</th>
-      <td>12</td>
       <td>District</td>
       <td>4761</td>
-      <td>3094650</td>
-      <td>650.0</td>
+      <td>$3,094,650.00</td>
+      <td>$650.00</td>
       <td>77.072464</td>
       <td>80.966394</td>
       <td>66.057551</td>
@@ -603,11 +592,10 @@ bottom_5_schools
     </tr>
     <tr>
       <th>Ford High School</th>
-      <td>13</td>
       <td>District</td>
       <td>2739</td>
-      <td>1763916</td>
-      <td>644.0</td>
+      <td>$1,763,916.00</td>
+      <td>$644.00</td>
       <td>77.102592</td>
       <td>80.746258</td>
       <td>68.309602</td>
