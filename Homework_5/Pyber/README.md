@@ -1,7 +1,7 @@
 
 # Pyber Analysis
 
-* I expected to see the highest number of rides and drivers in urban cities and the "Total Rides by City Type" and "Total Drivers by City Type" support my assumption, with 67.5% of the total rids and 86% of the total drivers.
+* I expected to see the highest number of rides and drivers in urban cities and the "Total Rides by City Type" and "Total Drivers by City Type" support my assumption, with 67.5% of the total rides and 86% of the total drivers.
 * Most of the fares for urban cities are under \$30, indicating shorter rides. This might indicate urban riders are more prone to use the service since it is more affordable. 
 * The number of drivers in urban cities is 7 times higher than suburban cities and urban cities get only 2.5 times more rides and 2 times more fares than suburban cities. This might mean that even though suburban drivers might not get as many rides as urban drivers, they might make just as much money.
 
@@ -18,17 +18,22 @@ import seaborn as sns
 ```python
 # Read in data
 city_df = pd.read_csv("raw_data/city_data.csv")
-ride_df = pd.read_csv("raw_data/ride_data.csv")
-all_df = pd.merge(city_df, ride_df, on="city")
-all_df.head()
+city_df.columns
 ```
 
 
 ```python
-avg_fare_city = all_df.groupby("city")["fare"].mean()
-total_rides_city = all_df.groupby("city")["ride_id"].count()
-total_drivers_city = all_df.groupby("city")["driver_count"].max()
-city_type = all_df.groupby("city")["type"].max()
+ride_df = pd.read_csv("raw_data/ride_data.csv")
+ride_df.columns
+```
+
+
+```python
+avg_fare_city = ride_df.groupby("city")["fare"].mean()
+total_rides_city = ride_df.groupby("city")["ride_id"].count()
+total_drivers_city = city_df.groupby("city")["driver_count"].sum()
+city_type = city_df.groupby("city")["type"].max()
+all_df = pd.merge(city_df, ride_df, on="city")
 ```
 
 # Bubble Plot of Ride Sharing Data
@@ -44,14 +49,14 @@ bubble_plot_df.head()
 ```python
 sns.set_style("darkgrid")
 sns.lmplot(x="total_rides", y="avg_fare", data=bubble_plot_df, fit_reg=False, hue="city_type", \
-           scatter_kws={"s": bubble_plot_df["total_drivers"], "edgecolor":"black", "alpha": .95}, legend_out=False, \
+           scatter_kws={"s": bubble_plot_df["total_drivers"] * 5, "edgecolor":"black", "alpha": .65}, legend_out=False, \
            palette= ["lightcoral", "lightskyblue", "gold"])
 plt.title("Pyber Ride Sharing Data (2016)")
-plt.legend(title="City Types", fontsize=12)
+plt.legend(title="City Types")
 plt.ylabel("Average Fare ($)")
 plt.xlabel("Total Number of Rides (Per City)")
 plt.figtext(1,.75, "Note: \nCircle size correlates with driver count per city.", wrap=True, fontsize=12)
-plt.savefig("bubble_plot.png")
+plt.savefig("bubble_plot.png", bbox_inches="tight")
 plt.show()
 ```
 
