@@ -99,7 +99,7 @@ plt.show()
 
 
 ```python
-total_drivers = all_df.groupby("type")["driver_count"].sum()
+total_drivers = city_df.groupby("type")["driver_count"].sum()
 total_drivers
 ```
 
